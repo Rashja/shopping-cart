@@ -4,7 +4,7 @@ class Product extends React.Component{
     render(){
         const {item,onClick}=this.props;
         return(
-            <div>
+            <div style={{float:'left', width:'30%'}}>
                 <img src={item.image} width='300' height='300' />
                 <p>title: {item.title} - price: {item.price}$ - inevntory: {item.inventory}</p>
                 <button 
