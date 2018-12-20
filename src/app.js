@@ -2,7 +2,12 @@ import "regenerator-runtime/runtime";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import ShoppingCart from './components/ShoppingCart';
-import store from './reducers/index.js';
+import store from './reducers/index';
+import MainRoute from './routers/MainRoute';
 
-ReactDOM.render(<Provider store={store} ><ShoppingCart /></Provider>,document.getElementById('app'));
+const Jsx=(
+    <Provider store={store} >
+        <MainRoute />
+    </Provider>
+)
+ReactDOM.render(Jsx,document.getElementById('app'))

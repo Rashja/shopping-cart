@@ -6,25 +6,23 @@ import { addToCart } from '../actions';
 class Products extends React.Component{
     
     render(){
-        const {productsList,AddCart}=this.props;
+        const {productsList,addToCart}=this.props;
         return(
             <div>
-                {productsList.map((item)=><Product key={item.id} item={item} onClick={()=>AddCart(item.id)} />)}                
+                {productsList.map((item)=><Product key={item.id} item={item} onClick={()=>addToCart(item.id)} />)}                
             </div>
         )
     }
 }
-const getProducts=products=>Object.keys(products).map(id=>products[id])
 
-const stateMapToProps=state=>{
-    return{
-        productsList:getProducts(state.productsReducer)
-    }
-}
+const mapToArray=products=>Object.keys(products).map(id=>products[id])
+
+const stateMapToProps=state=>({
+        productsList:mapToArray(state.productsReducer)
+})
 
 const mapDispatchToProps=dispatch=>({
-
-    AddCart:id=>dispatch(addToCart(id))
+        addToCart:id=>dispatch(addToCart(id))
 })
 
 export default connect(stateMapToProps,mapDispatchToProps)(Products);
