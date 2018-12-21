@@ -1,15 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Product from './Product';
-import { addToCart } from '../actions';
+import { addToCart,modalClick } from '../actions';
 
 class Products extends React.Component{
     
     render(){
-        const {productsList,addToCart}=this.props;
+        const {productsList,addToCart,modalClick}=this.props;
         return(
             <div>
-                {productsList.map((item)=><Product key={item.id} item={item} onClick={()=>addToCart(item.id)} />)}                
+                {productsList.map((item)=>
+                            <Product 
+                                key={item.id} 
+                                item={item} 
+                                modalClick={modalClick} 
+                                addClick={()=>addToCart(item.id)}
+                                 />)}                
             </div>
         )
     }
@@ -22,7 +28,8 @@ const stateMapToProps=state=>({
 })
 
 const mapDispatchToProps=dispatch=>({
-        addToCart:id=>dispatch(addToCart(id))
+        addToCart:id=>dispatch(addToCart(id)),
+        modalClick:()=>dispatch(modalClick())
 })
 
 export default connect(stateMapToProps,mapDispatchToProps)(Products);

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import Header from './Header';
 import Products from './Products';
 import {getData} from './../actions';
+import ProductModal from './ProductModal';
 
 class ShoppingCart extends React.Component{
     componentDidMount(){
@@ -14,6 +15,7 @@ class ShoppingCart extends React.Component{
                 <Header />
                 <hr />
                 <Products />
+                <ProductModal />
             </div>
         )
     }
