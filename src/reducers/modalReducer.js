@@ -4,9 +4,13 @@ const modalReducer=(state=initialState,action)=>{
 
     switch(action.type){
         case 'MODAL_CLICK':
-            return {mode:!!state};
+            const product=action.product
+            const newProduct=Object.assign(product, {mode: true});
+            return newProduct;
+            
         case 'CLOSE_MODAL':
-            return !state;    
+            return !state;
+
         default:
             return state;
     }

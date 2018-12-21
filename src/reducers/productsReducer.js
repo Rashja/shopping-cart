@@ -7,7 +7,7 @@ const productsReducer=(state=initialState,action)=>{
             return {...state}
             
         case 'FETCH_LIST':
-            return action.json
+            return action.Json
 
         case 'ADD_TO_CART':
             let id=action.id -1;

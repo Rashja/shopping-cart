@@ -9,6 +9,8 @@ class ProductModal extends React.Component{
         return(
             <div>
                 <Modal contentLabel="modalReducer" isOpen={modalReducer.mode} onRequestClose={closeModal} >
+                    <img src={modalReducer.image} width="400" height="400" />
+                    <h1>{`title : ${modalReducer.title} - price : ${modalReducer.price}`}</h1>
                     <button onClick={closeModal} >x</button>
                 </Modal>
             </div>

@@ -13,7 +13,7 @@ class Products extends React.Component{
                             <Product 
                                 key={item.id} 
                                 item={item} 
-                                modalClick={modalClick} 
+                                modalClick={()=>modalClick(item)} 
                                 addClick={()=>addToCart(item.id)}
                                  />)}                
             </div>
@@ -29,7 +29,7 @@ const stateMapToProps=state=>({
 
 const mapDispatchToProps=dispatch=>({
         addToCart:id=>dispatch(addToCart(id)),
-        modalClick:()=>dispatch(modalClick())
+        modalClick:(item)=>dispatch(modalClick(item))
 })
 
 export default connect(stateMapToProps,mapDispatchToProps)(Products);
