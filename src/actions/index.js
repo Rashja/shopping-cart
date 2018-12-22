@@ -16,3 +16,8 @@ export const fetchListItem=(Json)=>({
     type:'FETCH_LIST',
     Json
 });
+export const productPage=(item)=>({
+    type : 'PRODUCT_PAGE',
+    item
+})
+

@@ -5,7 +5,7 @@ import Home from "./Home";
 import ShoppingCart from './../components/ShoppingCart';
 import Login from './Login';
 import NotFounPage from './NotFoundPage';
-import Items from './Products';
+import Items from './../components/ProductPage';
 
 const MainRoute=()=>(
     <BrowserRouter>

@@ -11,7 +11,7 @@ function* fetchList(){
 }
 
 function* actionWatcher(){
-  yield takeEvery('GET_DATA',fetchList)
+  yield takeEvery('GET_DATA',fetchList);
 }
 
 export default function* rootSaga(){
