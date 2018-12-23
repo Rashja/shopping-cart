@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class Items extends React.Component{
+class ProductPage extends React.Component{
     render(){
         let {productsReducer}=this.props;
         return(
@@ -25,4 +25,4 @@ const mapStateToProps=state=>{
         productsReducer:state.productsReducer
     }
 }
-export default connect(mapStateToProps)(Items);
+export default connect(mapStateToProps)(ProductPage);
