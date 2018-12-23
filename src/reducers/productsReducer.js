@@ -13,7 +13,7 @@ const productsReducer=(state=initialState,action)=>{
             return action.item;
 
         case 'ADD_TO_CART':
-            let id=action.id -1;
+            let id=action.id;
             let product=state[id]
             return {
                 ...state,

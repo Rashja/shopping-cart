@@ -7,7 +7,7 @@ class Product extends React.Component{
     render(){
         const {item,addClick,modalClick,productPage}=this.props;
         return(
-            <div style={{float:'left', width:'30%'}}>
+            <div>
 
                 <NavLink to={`./products/${item.id}`} onClick={()=>productPage(item)} >
                        <img src={item.image} width='300' height='300' />

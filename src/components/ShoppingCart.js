@@ -4,6 +4,7 @@ import Header from './Header';
 import Products from './Products';
 import {getData} from './../actions';
 import ProductModal from './ProductModal';
+import Cart from './Cart';
 
 class ShoppingCart extends React.Component{
     componentDidMount(){
@@ -16,6 +17,8 @@ class ShoppingCart extends React.Component{
                 <hr />
                 <Products />
                 <ProductModal />
+                <hr />
+                <Cart />
             </div>
         )
     }

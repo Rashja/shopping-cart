@@ -20,4 +20,6 @@ export const productPage=(item)=>({
     type : 'PRODUCT_PAGE',
     item
 })
-
+export const checkOut=()=>({
+    type:'CHECK_OUT'
+})
