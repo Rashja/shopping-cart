@@ -4,6 +4,7 @@ import CartProduct from "./CartProduct";
 import { checkOut } from './../actions';
 
 class Cart extends React.Component{
+  
     render(){
         const {cartProducts,total,checkOut}=this.props;
         return(

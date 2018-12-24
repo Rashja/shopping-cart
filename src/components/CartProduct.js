@@ -1,6 +1,7 @@
 import React from 'react';
 
 class CartProduct extends React.Component{
+  
     render(){
         const {title,price,quantity}=this.props;        
         return(

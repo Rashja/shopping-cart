@@ -12,11 +12,10 @@ const quantityById=(state=initialState,action)=>{
     const { id } = action;
     return{
         ...state,
-        [id] : (state[id] || 0 ) + 1
+        [id] : (state[id] || 0 ) +1 
     }
 }
 const cartReducer=(state=initialState,action)=>{
-    console.log(state);
     
     switch(action.type){
 

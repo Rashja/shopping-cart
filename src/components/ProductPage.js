@@ -1,7 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { saveData } from './../actions';
 
 class ProductPage extends React.Component{
+    componentDidMount(){
+        const json=localStorage.getItem('product');
+        const product=JSON.parse(json);
+        this.props.dispatch(saveData(product));
+    }
+
+    componentWillUnmount(){
+        const json=JSON.stringify(this.props.productsReducer);
+        localStorage.setItem('product',json);
+    }
     render(){
         let {productsReducer}=this.props;
         return(
@@ -19,6 +30,7 @@ class ProductPage extends React.Component{
         )
     }
 }
+
 
 const mapStateToProps=state=>{
     return{
