@@ -12,8 +12,8 @@ const productsReducer=(state=initialState,action)=>{
         case 'PRODUCT_PAGE':
             return action.item;
 
-        case 'SAVE_DATA':
-            return action.product;
+            case 'SAVE_DATA':
+                return action.product;
 
         case 'ADD_TO_CART':
             let id=action.id;

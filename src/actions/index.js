@@ -23,7 +23,3 @@ export const productPage=(item)=>({
 export const checkOut=()=>({
     type:'CHECK_OUT'
 })
-export const saveData=(product)=>({
-    type:'SAVE_DATA',
-    product
-})
