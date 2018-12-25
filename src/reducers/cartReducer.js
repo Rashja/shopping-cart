@@ -30,16 +30,18 @@ const deleteProduct=(state=initialState,action)=>{
     return {
             addedIds:
                     state.addedIds.filter(({ID})=>{
-                    return ID ==!action.id
+                    return ID ===! action.id
                 }),
-            quantityById:Object.keys(state.quantityById).filter((ID)=>{
-                return ID ==! action.id
+            quantityById:
+                Object.keys(state.quantityById).filter((ID)=>{
+                return ID ===! action.id
             }).reduce((obj,id)=>{
             obj[id]=state.quantityById[id]
             return obj
         },{})
     }
 }
+
 const cartReducer=(state=initialState,action)=>{
     
     switch(action.type){
@@ -54,7 +56,6 @@ const cartReducer=(state=initialState,action)=>{
             return initialState;
 
         case 'HANDLE_DELETE':
-           
             return deleteProduct(state,action)
         
         default :
