@@ -23,3 +23,7 @@ export const productPage=(item)=>({
 export const checkOut=()=>({
     type:'CHECK_OUT'
 })
+export const handleDelete=(id)=>({
+    type:'HANDLE_DELETE',
+    id
+})

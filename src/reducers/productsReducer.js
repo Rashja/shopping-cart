@@ -15,6 +15,16 @@ const productsReducer=(state=initialState,action)=>{
             case 'SAVE_DATA':
                 return action.product;
 
+            case 'HANDLE_DELETE':
+            let retriveProduct=state[action.id]
+                return{
+                    ...state,
+                    [action.id]:{
+                        ...retriveProduct,
+                        inventory:retriveProduct.inventory +1
+                    }
+                }
+
         case 'ADD_TO_CART':
             let id=action.id;
             let product=state[id]

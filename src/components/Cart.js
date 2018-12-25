@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CartProduct from "./CartProduct";
-import { checkOut } from './../actions';
+import { checkOut,handleDelete } from './../actions';
 
 class Cart extends React.Component{
   
     render(){
-        const {cartProducts,total,checkOut}=this.props;
+        const {cartProducts,total,checkOut,handleDelete}=this.props;
         return(
             <div>
                 <h3>Your Cart</h3>
                 {
                     cartProducts.length > 0 ? 
-                    (cartProducts.map(product=><CartProduct key={product.id} {...product} />)) : 
+                    (cartProducts.map(product=><CartProduct key={product.id} {...product} onClick={()=>handleDelete(product.id)} />)) : 
                     (<h3>please add your products to cart</h3>)
                 }
                 <p>Total : {total} $</p>
@@ -38,6 +38,7 @@ const mapStateToProps=state=>({
     total: getTotal(state)
 })
 const mapDispatchToProps=dispatch=>({
-    checkOut:()=>dispatch(checkOut())
+    checkOut:()=>dispatch(checkOut()),
+    handleDelete:(id)=>dispatch(handleDelete(id))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Cart);

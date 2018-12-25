@@ -21,7 +21,6 @@ class ProductPage extends React.Component{
     }
 }
 
-
 const mapStateToProps=state=>({
         productsReducer:state.productsReducer
 })
