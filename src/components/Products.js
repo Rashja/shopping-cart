@@ -7,7 +7,7 @@ class Products extends React.Component {
   render() {
     const { productsList, addToCart, modalClick } = this.props;
     return (
-      <div className="container mt-2">
+      <div className="container mt-2" >
         <div className="row">
           {productsList.map(item => (
             <Product
@@ -26,15 +26,12 @@ class Products extends React.Component {
 const mapToArray = products => Object.keys(products).map(id => products[id]);
 
 const stateMapToProps = state => ({
-  productsList: mapToArray(state.productsReducer)
+  productsList: mapToArray(state.productsReducer.products),
 });
 
 const mapDispatchToProps = dispatch => ({
   addToCart: id => dispatch(addToCart(id)),
-  modalClick: item => dispatch(modalClick(item))
+  modalClick: item => dispatch(modalClick(item)),
 });
 
-export default connect(
-  stateMapToProps,
-  mapDispatchToProps
-)(Products);
+export default connect(stateMapToProps,mapDispatchToProps)(Products);

@@ -22,6 +22,6 @@ class ProductPage extends React.Component{
 }
 
 const mapStateToProps=state=>({
-        productsReducer:state.productsReducer
+        productsReducer:state.productsReducer.products[state.productsReducer.currentProduct]
 })
 export default connect(mapStateToProps)(ProductPage);

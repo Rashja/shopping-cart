@@ -6,13 +6,10 @@ class CartProduct extends React.Component {
     return (
       <div>
         <h5>
-          {
-            /* {`Title : ${title} Price : ${price} - inventory : ${quantity}`} */
-            title
-          }
+            {
+              `Title : ${title} Price : ${price} $ - inventory : ${quantity}`
+            }
         </h5>
-        <h6>{price} $</h6>
-        <h6>{`inventory: ${quantity}`}</h6>
         <button className="btn btn-danger" onClick={onClick} >x</button>
         <hr />
       </div>

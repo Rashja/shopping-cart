@@ -1,38 +1,41 @@
-const initialState=[];
+const initialState={products: [], currentProduct: undefined };
 
 const productsReducer=(state=initialState,action)=>{
         
     switch(action.type){
-        case 'GET_DATA':
-            return {...state}
             
         case 'FETCH_LIST':
-            return action.Json;
+            return {...state, products: action.Json};
 
         case 'PRODUCT_PAGE':
-            return action.item;
+            return {...state, currentProduct: action.item.id};
 
-            case 'SAVE_DATA':
-                return action.product;
-
-            case 'HANDLE_DELETE':
-            let retriveProduct=state[action.id]
-                return{
+        case 'HANDLE_DELETE':
+        let retriveProduct=state.products[action.id]
+            return{
                     ...state,
-                    [action.id]:{
-                        ...retriveProduct,
-                        inventory:retriveProduct.inventory +1
+                    products: {
+                        ...state.products,
+                        [action.id]:{
+                            ...retriveProduct,
+                            inventory:retriveProduct.inventory +1
+                        }
                     }
+                    
                 }
 
         case 'ADD_TO_CART':
             let id=action.id;
-            let product=state[id]
+            let product=state.products[id]
             return {
                 ...state,
-                [id]:{
-                    ...product,
-                    inventory:product.inventory -1
+                products:{
+                    ...state.products,
+                    [id]:{
+                        ...product,
+                        inventory:product.inventory -1
+                    }
+    
                 }
             };
             

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { productPage } from "./../actions";
 
 class Product extends React.Component {
+
   render() {
     const { item, addClick, modalClick, productPage } = this.props;
     return (
@@ -49,10 +50,10 @@ class Product extends React.Component {
     );
   }
 }
+const mapStateToprops=state=>({
+  productsReducer:state.productsReducer
+})
 const mapDispatchToProps = dispatch => ({
-  productPage: item => dispatch(productPage(item))
+  productPage: item => dispatch(productPage(item)),
 });
-export default connect(
-  null,
-  mapDispatchToProps
-)(Product);
+export default connect(mapStateToprops,mapDispatchToProps)(Product);

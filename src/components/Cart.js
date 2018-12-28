@@ -8,7 +8,6 @@ class Cart extends React.Component {
     const { cartProducts, total, checkOut,handleDelete } = this.props;
     return (
       <div>
-        <span className="btn btn-primary mb-2 view-cart">View Cart</span>
         <div className="cart-box p-3 text-center">
           <h3>Your Cart</h3>
           <hr />
@@ -17,8 +16,7 @@ class Cart extends React.Component {
               <CartProduct key={product.id} {...product} onClick={()=>handleDelete(product.id)} />
             ))
           ) : (
-              // <h3>please add your products to cart</h3>
-            <span />
+              <h3>please add your products to cart</h3>
           )}
           <p>Total : {total} $</p>
           <button
@@ -35,7 +33,7 @@ class Cart extends React.Component {
 }
 const getCartProducts = state => {
   return state.cartReducer.addedIds.map(id => ({
-    ...state.productsReducer[id],
+    ...state.productsReducer.products[id],
     quantity: state.cartReducer.quantityById[id] || 0
   }));
 };
@@ -44,21 +42,17 @@ const getTotal = state =>
     .reduce(
       (total, id) =>
         total +
-        state.productsReducer[id].price *
-          (state.cartReducer.quantityById[id] || 0),
-      0
-    )
-    .toFixed(2);
+        state.productsReducer.products[id].price *
+          (state.cartReducer.quantityById[id] || 0),0).toFixed(2);
 
 const mapStateToProps = state => ({
   cartProducts: getCartProducts(state),
   total: getTotal(state)
 });
+
 const mapDispatchToProps = dispatch => ({
   checkOut: () => dispatch(checkOut()),
   handleDelete:(id)=>dispatch(handleDelete(id))
 });
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Cart);
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cart);

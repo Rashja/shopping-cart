@@ -19,7 +19,8 @@ body {
   }
   
   .cart-box {
-    position: fixed;
+    width: 40%;
+    margin: auto;
     top: 80px;
     right: 10px;
     text-align: right;
@@ -27,23 +28,8 @@ body {
     background: #20222b;
     color: #a5afd7;
     border-radius: 10px;
-    visibility: hidden;
-    transition: 0.2s 6s;
-  }
-  
-  .view-cart {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    text-align: right;
-    z-index: 99999;
-    border-radius: 10px;
-    cursor: auto !important;
-  }
-  
-  .view-cart:hover + .cart-box {
     visibility: visible;
-    transition-delay: 0s;
+    transition: 0.2s 6s;
   }
   
   .cart-box hr {

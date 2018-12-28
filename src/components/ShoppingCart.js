@@ -4,11 +4,12 @@ import Header from "./Header";
 import Products from "./Products";
 import { getData } from "./../actions";
 import ProductModal from "./ProductModal";
-import Cart from "./Cart";
 
 class ShoppingCart extends React.Component {
   componentDidMount() {
-    this.props.getData;
+    if (!this.props.productsIsLoaded) {
+      this.props.getData();
+    }
   }
   render() {
     return (
@@ -16,18 +17,18 @@ class ShoppingCart extends React.Component {
         <Header />
         <Products />
         <ProductModal />
-        <hr />
-        <Cart />
       </div>
     );
   }
 }
-const mapStateToProps = dispatch => {
-  return {
-    getData: dispatch(getData())
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getData: () => dispatch(getData())
+});
+
+const mapState = state => ({
+  productsIsLoaded: Object.keys(state.productsReducer.products).length
+});
 export default connect(
-  null,
-  mapStateToProps
+  mapState,
+  mapDispatchToProps
 )(ShoppingCart);

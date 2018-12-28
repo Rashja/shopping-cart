@@ -30,6 +30,11 @@ const Head = () => (
           </NavLink>
         </li>
         <li className="nav-item">
+          <NavLink to="/Cart" className="nav-link">
+            Cart
+          </NavLink>
+        </li>
+        <li className="nav-item">
           <NavLink to="/Login" className="nav-link">
             Log In
           </NavLink>

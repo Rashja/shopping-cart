@@ -6,6 +6,7 @@ import ShoppingCart from './../components/ShoppingCart';
 import Login from './Login';
 import NotFounPage from './NotFoundPage';
 import ProductPage from './../components/ProductPage';
+import Cart from '../components/Cart';
 
 const MainRoute=()=>(
     <BrowserRouter>
@@ -15,6 +16,7 @@ const MainRoute=()=>(
             <Route  path='/' component={Home} exact={true} />
             <Route  path='/Products' component={ShoppingCart} exact={true} />
             <Route  path='/Products/:id' component={ProductPage} exact={true} />
+            <Route  path='/Cart' component={Cart} exact={true} />
             <Route  path='/Login' component={Login} exact={true} />
             <Route  component={NotFounPage} />
         </Switch>

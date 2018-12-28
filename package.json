@@ -1,9 +1,9 @@
 {
-  "name": "expensify",
+  "name": "shopping-cart",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Andrew Mead",
-  "license": "MIT",
+  "author": "Rashja",
+  "license": "",
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
@@ -33,6 +33,7 @@
     "react-redux": "5.0.5",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.2",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
