@@ -9,6 +9,9 @@ const productsReducer=(state=initialState,action)=>{
 
         case 'PRODUCT_PAGE':
             return {...state, currentProduct: action.item.id};
+        
+        case 'ADD_ITEM_FROM_MODAL':
+            return {...state, currentProduct: action.item.id};
 
         case 'HANDLE_DELETE':
         let retriveProduct=state.products[action.id]
@@ -21,7 +24,6 @@ const productsReducer=(state=initialState,action)=>{
                             inventory:retriveProduct.inventory +1
                         }
                     }
-                    
                 }
 
         case 'ADD_TO_CART':

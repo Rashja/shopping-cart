@@ -27,3 +27,7 @@ export const handleDelete=(id)=>({
     type:'HANDLE_DELETE',
     id
 })
+export const addItemFromModal=item=>({
+    type:'ADD_ITEM_FROM_MODAL',
+    item
+})

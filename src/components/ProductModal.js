@@ -2,14 +2,12 @@ import React from 'react';
 import Modal from 'react-modal';
 import { NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
-import {closeModal,addToCart,productPage} from './../actions';
-import {Container, Row, Col, Button} from 'reactstrap';
+import { closeModal,addToCart,addItemFromModal } from './../actions';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 class ProductModal extends React.Component{
     render(){
-        const {modalReducer,closeModal,addToCart}=this.props;
-        console.log(modalReducer);
-        
+        const {modalReducer,closeModal,addToCart,addItemFromModal}=this.props;
         return(
             
                 <Modal style={{backgroundColor: "red"}} className="modal-message" ariaHideApp={false} contentLabel="modalReducer" isOpen={modalReducer.mode} onRequestClose={closeModal} >
@@ -26,11 +24,10 @@ class ProductModal extends React.Component{
                             <NavLink
                                 className="product-btn"
                                 to={`./products/${modalReducer.id}`}
-                                onClick={() => productPage(modalReducer)}
+                                onClick={()=>addItemFromModal(modalReducer)}
                             >
                             see the product page
                             </NavLink>
-
                             <Button
                                 color="info"
                                 onClick={()=>addToCart(modalReducer.id)}
@@ -54,13 +51,9 @@ class ProductModal extends React.Component{
 const mapDispatchToProps=dispatch=>({
     closeModal:()=>dispatch(closeModal()),
     addToCart: id => dispatch(addToCart(id)),
-    productPage: item => dispatch(productPage(item))
-
+    addItemFromModal:item =>dispatch(addItemFromModal(item))
 })
-const mapStateToProps=state=>{
-    
-    return{
+const mapStateToProps=state=>({
         modalReducer:state.modalReducer,
-    }
-}
+})
 export default connect(mapStateToProps,mapDispatchToProps)(ProductModal);
