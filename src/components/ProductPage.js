@@ -8,7 +8,7 @@ class ProductPage extends React.Component{
         return(
             <div>
                 <h1>Info Of Each Product</h1>
-                <img src={productsReducer.image} width="600" height="600" />
+                <img src={productsReducer.image} className="img-fluid" />
                 <h2>
                     {
                        `Title :${productsReducer.title} - 

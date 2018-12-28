@@ -2,13 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import Product from "./Product";
 import { addToCart, modalClick } from "../actions";
+import {Container, Row} from 'reactstrap';
 
 class Products extends React.Component {
   render() {
     const { productsList, addToCart, modalClick } = this.props;
     return (
-      <div className="container mt-2" >
-        <div className="row">
+      <Container>
+        <Row>
           {productsList.map(item => (
             <Product
               key={item.id}
@@ -17,8 +18,8 @@ class Products extends React.Component {
               addClick={() => addToCart(item.id)}
             />
           ))}
-        </div>
-      </div>
+        </Row>
+      </Container>
     );
   }
 }

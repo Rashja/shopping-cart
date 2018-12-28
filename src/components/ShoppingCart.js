@@ -4,6 +4,7 @@ import Header from "./Header";
 import Products from "./Products";
 import { getData } from "./../actions";
 import ProductModal from "./ProductModal";
+import {Container} from 'reactstrap';
 
 class ShoppingCart extends React.Component {
   componentDidMount() {
@@ -13,11 +14,11 @@ class ShoppingCart extends React.Component {
   }
   render() {
     return (
-      <div className="container-fluid">
+      <Container fluid >
         <Header />
         <Products />
         <ProductModal />
-      </div>
+      </Container>
     );
   }
 }

@@ -35,4 +35,52 @@ body {
   .cart-box hr {
     border-top: 1px solid #fff;
   }
-  
+
+  .modal-message{
+    position: relative;
+    color: black;
+    outline: none;
+    padding: 32px;
+    max-width: 800px;
+    text-align: center;
+    background:#fff
+  }
+
+  .ReactModalPortal .ReactModal__Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 200ms ease-in-out;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+  background:rgba(0,0,0,0.7) !important;
+  z-index: 9999999999;
+}
+
+.close-btn{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.price-box {
+  color: #f82e56;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-btn{
+  color: #999;
+  display: inline-block;
+  margin-bottom: 40px;
+  text-decoration: underline;
+  width: 100%;
+}
