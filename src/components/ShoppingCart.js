@@ -5,6 +5,7 @@ import Products from "./Products";
 import { getData } from "./../actions";
 import ProductModal from "./ProductModal";
 import {Container} from 'reactstrap';
+import Pages from "./Pages";
 
 class ShoppingCart extends React.Component {
   componentDidMount() {
@@ -18,6 +19,7 @@ class ShoppingCart extends React.Component {
         <Header />
         <Products />
         <ProductModal />
+        <Pages />
       </Container>
     );
   }

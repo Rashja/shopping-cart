@@ -31,3 +31,13 @@ export const addItemFromModal=item=>({
     type:'ADD_ITEM_FROM_MODAL',
     item
 })
+export const handleChange=({pageNumber,info})=>({
+    type:'HANDLE_CHANGE',
+    pageNumber,
+    info
+});
+export const getValue=(inputValue)=>({
+    type:'GET_VALUE',
+    inputValue
+})
+

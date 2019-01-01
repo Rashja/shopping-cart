@@ -4,7 +4,7 @@ const Header=()=>{
     const title='Enjoy Your Shopping';
     return(
         <div>
-            <h1>{title}</h1>
+            <h1 className="header">{title}</h1>
         </div>
     )
 }
