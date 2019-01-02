@@ -5,7 +5,10 @@ import { fetchListItem } from "./../actions";
 
 function* fetchList(){
   const json=yield axios.get('http://5c18eb2ccfe31000133b17a2.mockapi.io/product-items')
-        .then(res=>res);
+        .then(res=>res)
+        .catch(error=>{
+          console.log(error)
+        })
         const Json=json.data
         yield put(fetchListItem(Json));
 }

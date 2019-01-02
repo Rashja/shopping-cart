@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Product from "./Product";
 import { addToCart, modalClick } from "../actions";
 import {Container, Row} from 'reactstrap';
-import SearchInput from "./SearchInput";
 
 class Products extends React.Component {
   render() {
@@ -13,7 +12,6 @@ class Products extends React.Component {
     })
     return (
       <Container>
-      <SearchInput />
         <Row> 
             {productsFilter.map(item => (
               <Product

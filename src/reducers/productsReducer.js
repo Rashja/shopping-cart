@@ -3,7 +3,7 @@ const initialState={products: [], currentProduct: undefined };
 const productsReducer=(state=initialState,action)=>{
         
     switch(action.type){
-            
+
         case 'FETCH_LIST':
             return {...state, products: action.Json};
 
