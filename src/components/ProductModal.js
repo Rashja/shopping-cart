@@ -7,7 +7,8 @@ import { Container, Row, Col, Button } from 'reactstrap';
 
 class ProductModal extends React.Component{
     render(){
-        const {modalReducer,closeModal,addToCart,addItemFromModal}=this.props;
+        const {modalReducer,closeModal,addToCart,addItemFromModal,productsReducer}=this.props;
+        const modalProduct=productsReducer.products[modalReducer.id];
         return(
             
                 <Modal style={{backgroundColor: "red"}} className="modal-message" ariaHideApp={false} contentLabel="modalReducer" isOpen={modalReducer.mode} onRequestClose={closeModal} >
@@ -30,9 +31,10 @@ class ProductModal extends React.Component{
                             </NavLink>
                             <Button
                                 color="info"
+                                disabled={modalReducer.id && modalProduct.inventory > 0 ? false : true}
                                 onClick={()=>addToCart(modalReducer.id)}
                             >
-                            Add To Cart
+                            {modalReducer.id && modalProduct.inventory > 0 ? 'Add To Cart' : 'Sold Out'}
                             </Button>
                         </div>
                     </Col>
@@ -55,5 +57,6 @@ const mapDispatchToProps=dispatch=>({
 })
 const mapStateToProps=state=>({
         modalReducer:state.modalReducer,
+        productsReducer:state.productsReducer
 })
 export default connect(mapStateToProps,mapDispatchToProps)(ProductModal);
