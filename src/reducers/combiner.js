@@ -3,12 +3,14 @@ import productsReducer from './productsReducer';
 import modalReducer from './modalReducer';
 import cartReducer from "./cartReducer";
 import searchReducer from './searchReducer';
+import userReducer from './userReducer';
 
 const reducers=combineReducers({
     productsReducer,
     modalReducer,
     searchReducer,
-    cartReducer
+    cartReducer,
+    userReducer
 });
 
 export default reducers;

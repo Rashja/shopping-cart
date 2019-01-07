@@ -40,4 +40,18 @@ export const getValue=(inputValue)=>({
     type:'GET_VALUE',
     inputValue
 })
+export const getUserData=()=>({
+    type:'GET_USER_DATA',
+})
+export const showUserData=(userData)=>({
+    type:'SHOW_USER_DATA',
+    userData
+})
+export const getMode=()=>({
+    type:'GET_MODE',
+})
+export const logOut=()=>({
+    type:'LOG_OUT',
+})
+
 
